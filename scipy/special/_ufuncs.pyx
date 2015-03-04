@@ -1793,6 +1793,8 @@ from _boxcox cimport inv_boxcox1p as _func_inv_boxcox1p
 ctypedef double _proto_inv_boxcox1p_t(double, double) nogil
 cdef _proto_inv_boxcox1p_t *_proto_inv_boxcox1p_t_var = &_func_inv_boxcox1p
 cdef extern from "_ufuncs_defs.h":
+    cdef double _func_invexpi_wrap "invexpi_wrap"(double) nogil
+cdef extern from "_ufuncs_defs.h":
     cdef int _func_it2i0k0_wrap "it2i0k0_wrap"(double, double *, double *) nogil
 cdef extern from "_ufuncs_defs.h":
     cdef int _func_it2j0y0_wrap "it2j0y0_wrap"(double, double *, double *) nogil
@@ -6202,6 +6204,34 @@ ufunc_inv_boxcox1p_ptr[2*1+1] = <void*>(<char*>"inv_boxcox1p")
 ufunc_inv_boxcox1p_data[0] = &ufunc_inv_boxcox1p_ptr[2*0]
 ufunc_inv_boxcox1p_data[1] = &ufunc_inv_boxcox1p_ptr[2*1]
 inv_boxcox1p = np.PyUFunc_FromFuncAndData(ufunc_inv_boxcox1p_loops, ufunc_inv_boxcox1p_data, ufunc_inv_boxcox1p_types, 2, 2, 1, 0, "inv_boxcox1p", ufunc_inv_boxcox1p_doc, 0)
+
+cdef np.PyUFuncGenericFunction ufunc_invexpi_loops[2]
+cdef void *ufunc_invexpi_ptr[4]
+cdef void *ufunc_invexpi_data[2]
+cdef char ufunc_invexpi_types[4]
+cdef char *ufunc_invexpi_doc = (
+    "invexpi(x)\n"
+    "\n"
+    "Inverse of exponential integral Ei\n"
+    "\n"
+    "Defined as::\n"
+    "\n"
+    "    InvEi(Ei(x)) = x\n"
+    "\n"
+    "See `expi` for the exponential integral Ei.")
+ufunc_invexpi_loops[0] = <np.PyUFuncGenericFunction>loop_d_d__As_f_f
+ufunc_invexpi_loops[1] = <np.PyUFuncGenericFunction>loop_d_d__As_d_d
+ufunc_invexpi_types[0] = <char>NPY_FLOAT
+ufunc_invexpi_types[1] = <char>NPY_FLOAT
+ufunc_invexpi_types[2] = <char>NPY_DOUBLE
+ufunc_invexpi_types[3] = <char>NPY_DOUBLE
+ufunc_invexpi_ptr[2*0] = <void*>_func_invexpi_wrap
+ufunc_invexpi_ptr[2*0+1] = <void*>(<char*>"invexpi")
+ufunc_invexpi_ptr[2*1] = <void*>_func_invexpi_wrap
+ufunc_invexpi_ptr[2*1+1] = <void*>(<char*>"invexpi")
+ufunc_invexpi_data[0] = &ufunc_invexpi_ptr[2*0]
+ufunc_invexpi_data[1] = &ufunc_invexpi_ptr[2*1]
+invexpi = np.PyUFunc_FromFuncAndData(ufunc_invexpi_loops, ufunc_invexpi_data, ufunc_invexpi_types, 2, 1, 1, 0, "invexpi", ufunc_invexpi_doc, 0)
 
 cdef np.PyUFuncGenericFunction ufunc_it2i0k0_loops[2]
 cdef void *ufunc_it2i0k0_ptr[4]

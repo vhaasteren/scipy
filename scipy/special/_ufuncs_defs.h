@@ -97,6 +97,7 @@ npy_double i0(npy_double);
 npy_double i0e(npy_double);
 npy_double i1(npy_double);
 npy_double i1e(npy_double);
+npy_double invexpi_wrap(npy_double);
 npy_int it2i0k0_wrap(npy_double, npy_double *, npy_double *);
 npy_int it2j0y0_wrap(npy_double, npy_double *, npy_double *);
 npy_double it2struve0_wrap(npy_double);

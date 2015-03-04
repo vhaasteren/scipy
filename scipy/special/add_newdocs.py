@@ -1018,6 +1018,19 @@ add_newdoc("scipy.special", "expi",
     See `expn` for a different exponential integral.
     """)
 
+add_newdoc("scipy.special", "invexpi",
+    """
+    invexpi(x)
+
+    Inverse of exponential integral Ei
+
+    Defined as::
+
+        InvEi(Ei(x)) = x
+
+    See `expi` for the exponential integral Ei.
+    """)
+
 add_newdoc('scipy.special', 'expit',
     """
     expit(x)

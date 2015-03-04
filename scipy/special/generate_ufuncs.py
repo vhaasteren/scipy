@@ -152,6 +152,7 @@ ellipj -- ellpj: dd*dddd->*i                               -- cephes.h
 expn -- expn: id->d, expn_unsafe: dd->d                    -- cephes.h, _legacy.pxd
 exp1 -- exp1_wrap: d->d, cexp1_wrap: D->D                  -- specfun_wrappers.h
 expi -- expi_wrap: d->d, cexpi_wrap: D->D                  -- specfun_wrappers.h
+invexpi -- invexpi_wrap: d->d                              -- specfun_wrappers.h
 kn -- cbesk_wrap_real_int: id->d, kn_unsafe: dd->d         -- cephes.h, _legacy.pxd
 pdtrc -- pdtrc: id->d, pdtrc_unsafe: dd->d                 -- cephes.h, _legacy.pxd
 pdtr -- pdtr: id->d, pdtr_unsafe: dd->d                    -- cephes.h, _legacy.pxd

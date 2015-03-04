@@ -544,6 +544,7 @@ Other Special Functions
    expn         -- Exponential integral.
    exp1         -- Exponential integral of order 1 (for complex argument)
    expi         -- Another exponential integral -- Ei(x)
+   invexpi      -- Inverse of Ei(x) -- InvEi(x)
    factorial    -- The factorial function, n! = special.gamma(n+1)
    factorial2   -- Double factorial, (n!)!
    factorialk   -- [+](...((n!)!)!...)! where there are k '!'

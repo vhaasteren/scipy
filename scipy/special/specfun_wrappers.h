@@ -52,6 +52,7 @@ double hyp1f1_wrap( double a, double b, double x);
 double hypU_wrap(double a, double b, double x);
 double exp1_wrap(double x);
 double expi_wrap(double x);
+double invexpi_wrap(double x);
 npy_cdouble cexp1_wrap(npy_cdouble z);
 npy_cdouble cexpi_wrap(npy_cdouble z);
 npy_cdouble cerf_wrap(npy_cdouble z);

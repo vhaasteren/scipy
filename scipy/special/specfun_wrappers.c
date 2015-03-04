@@ -36,6 +36,7 @@ extern void F_FUNC(itairy,ITAIRY)(double*,double*,double*,double*,double*);
 extern void F_FUNC(e1xb,E1XB)(double*,double*);
 extern void F_FUNC(e1z,E1Z)(npy_cdouble*,npy_cdouble*);
 extern void F_FUNC(eix,EIX)(double*,double*);
+extern void F_FUNC(inveix,INVEIX)(double*,double*);
 extern void F_FUNC(cerror,CERROR)(npy_cdouble*,npy_cdouble*);
 extern void F_FUNC(stvh0,STVH0)(double*,double*);
 extern void F_FUNC(stvh1,STVH1)(double*,double*);
@@ -216,6 +217,14 @@ npy_cdouble cexpi_wrap(npy_cdouble z) {
   F_FUNC(eixz,EIXZ)(&z, &outz);
   ZCONVINF("cexpi", outz);
   return outz;
+}
+
+double invexpi_wrap(double x) {
+  double out;
+  
+  F_FUNC(inveix,INVEIX)(&x, &out);
+  CONVINF("invexpi", out);
+  return out;
 }
 
 npy_cdouble cerf_wrap(npy_cdouble z) {
